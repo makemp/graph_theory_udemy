@@ -1,7 +1,6 @@
 # Finding connected components of the graph using dfs
 
-require_relative 'dfs'
-class ConnectedComponents
+class DFS::ConnectedComponents
   attr_reader :components
 
   def initialize(n, graph)
@@ -22,60 +21,6 @@ class ConnectedComponents
       end
     end
     self
-  end
-
-  class Examples
-    class << self
-      def run
-        example1
-        example2
-        example3
-        example4
-      end
-
-      def example1
-        puts 'two groups of nodes'
-
-        n = 5
-        graph = [[1],[0],[3,4],[2,4],[2,3]]
-
-        cc = ConnectedComponents.new(n, graph).group_components
-        puts cc.components
-      end
-
-      def example2
-        puts 'two group of nodes - just one alone'
-
-        n = 5
-        graph = [[1, 2, 4], # forth element (3) has no connections
-                 [0, 2, 4],
-                 [0, 1, 4],
-                 [],
-                 [0, 1, 2]]
-
-        cc = ConnectedComponents.new(n, graph).group_components
-        puts cc.components
-      end
-
-      def example3
-        puts 'Connected - like a tree - one group'
-        n = 5
-        graph = [[1, 2], [], [3, 4], [], []]
-
-        cc = ConnectedComponents.new(n, graph).group_components
-        puts cc.components
-      end
-
-      def example4
-        puts "five groups"
-
-        n = 10
-        graph = [[1],[0],[3,4],[2,4],[2,3],[],[], [8,9], [7,9], [7,7]]
-
-        cc = ConnectedComponents.new(n, graph).group_components
-        puts cc.components
-      end
-    end
   end
 
   attr_reader :n, :graph, :visited

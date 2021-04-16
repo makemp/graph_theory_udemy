@@ -1,6 +1,3 @@
-require_relative 'dfs/dfs'
-require_relative 'dfs/connected_components'
-require_relative 'tools/adjacency_undirected_list'
-require_relative 'bfs/bfs'
+require_relative 'load_all'
 
-BFS::Examples.run
+DFS::ConnectedComponents::Examples.run
