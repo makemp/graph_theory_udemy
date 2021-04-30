@@ -10,6 +10,6 @@ Dir.glob("**/*")
       2
      end
    end
-   .select { |path| File.file?(path) && path != 'load_all.rb' && path != 'run.rb' }.each do |path|
+   .select { |path| File.file?(path) && path != 'load_all.rb' && path != 'run.rb' && path != 'README.md' }.each do |path|
   require_relative path
 end
