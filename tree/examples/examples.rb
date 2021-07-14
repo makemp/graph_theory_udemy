@@ -10,7 +10,7 @@ class Tree::Examples
 2 3
 2 4)
 
-      graph = AdjacencyUndirectedListBuilder.new(number_of_nodes, graph_string).call
+      graph = AdjacencyListBuilder.new(number_of_nodes, graph_string).call
 
       puts Tree::Center.new(number_of_nodes, graph).center.inspect
     end
@@ -32,7 +32,7 @@ class Tree::Examples
 11 13
 11 12)
 
-      graph = AdjacencyUndirectedListBuilder.new(number_of_nodes, graph_string).call
+      graph = AdjacencyListBuilder.new(number_of_nodes, graph_string).call
 
       puts Tree::Center.new(number_of_nodes, graph).center.inspect
     end
@@ -49,8 +49,10 @@ class Tree::Examples
 3 2
 3 7
 3 6
-6 9)
-      graph = AdjacencyUndirectedListBuilder.new(number_of_nodes, graph_string).call
+6 9
+)
+      graph = AdjacencyListBuilder.new(number_of_nodes, graph_string).call(directed: true)
+      
       puts Tree::Center.new(number_of_nodes, graph).center.inspect
     end
 
@@ -62,7 +64,7 @@ class Tree::Examples
 1 2
 2 3
 3 4)
-      graph = AdjacencyUndirectedListBuilder.new(number_of_nodes, graph_string).call
+      graph = AdjacencyListBuilder.new(number_of_nodes, graph_string).call
       puts Tree::Center.new(number_of_nodes, graph).center.inspect
     end
   end

@@ -10,20 +10,20 @@
 # 4 5
 # 5 6
 # 7
-class AdjacencyUndirectedListBuilder
+class AdjacencyListBuilder
   def initialize(n, graph_string)
     @n = n # node count
     @graph_string = graph_string
     @adjacency_list = Array.new(n) { [] }
   end
 
-  def call
+  def call(directed: false)
     parsed_graph_string.each do |pair|
       # first element is node number, second which element it connects
       index, connected_with = pair.map(&:to_i)
       if connected_with
         adjacency_list[index].push connected_with
-        adjacency_list[connected_with].push index
+        adjacency_list[connected_with].push index unless directed
       end
     end
     adjacency_list

@@ -17,7 +17,7 @@ class BFS::Examples
 2 10
 9 11)
 
-      graph = AdjacencyUndirectedListBuilder.new(number_of_nodes, graph_string).call
+      graph = AdjacencyListBuilder.new(number_of_nodes, graph_string).call
 
       puts BFS.new(number_of_nodes, graph).bfs(0, 11).inspect
     end
@@ -39,7 +39,7 @@ class BFS::Examples
 2 10
 9 11
 12 13)
-      graph = AdjacencyUndirectedListBuilder.new(number_of_nodes, graph_string).call
+      graph = AdjacencyListBuilder.new(number_of_nodes, graph_string).call
       puts BFS.new(number_of_nodes, graph).bfs(3, 12).inspect
     end
   end

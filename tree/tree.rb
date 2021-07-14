@@ -21,7 +21,7 @@ class Tree
       leaves = []
       graph.each_with_index do |node, index| # node is an array of elements! (Adjacency List)
         degree[index] = node.size
-        if degree[index] < 2
+        if degree[index] < 2 # 0 for one-node tree, 1 for normal cases
           leaves << index
           degree[index] = 0
         end
