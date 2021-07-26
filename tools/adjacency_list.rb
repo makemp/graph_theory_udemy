@@ -18,10 +18,14 @@ class AdjacencyListBuilder
   end
 
   def call(directed: false)
-    parsed_graph_string.each do |pair|
-      # first element is node number, second which element it connects
-      index, connected_with = pair.map(&:to_i)
+    parsed_graph_string.each do |tuple|
+      # first element is node number, second which element it connects, third is a numeric label
+      index, connected_with, num_label = tuple.map { |e| ExtendedInteger.new(e) }
       if connected_with
+        if num_label
+          index.label = num_label
+          connected_with.label = num_label
+        end
         adjacency_list[index].push connected_with
         adjacency_list[connected_with].push index unless directed
       end
@@ -34,7 +38,7 @@ class AdjacencyListBuilder
   attr_reader :n, :graph_string, :adjacency_list
 
   def parsed_graph_string
-    @parsed_graph_string ||= graph_string.split("\n").map { |pair| pair.split(' ') }
+    @parsed_graph_string ||= graph_string.split("\n").map { |tuple| tuple.split(' ') }
   end
 end
 

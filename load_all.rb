@@ -1,7 +1,9 @@
 Dir.glob("**/*")
    .sort_by do |path|
-     if path =~ /\Acommons/ || path =~ /\Atools/
+     if path =~ /\Acommons/
       0
+     elsif  path =~ /\Atools/
+       0.5
      elsif path == 'dfs/dfs.rb'
       1
      elsif path =~ /examples\.rb/
