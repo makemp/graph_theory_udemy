@@ -23,6 +23,14 @@ class ExtendedInteger
     @int.inspect
   end
 
+  def to_s
+    @int.to_s
+  end
+
+  def preview
+    "#{@int} => #{label}"
+  end
+
   def method_missing(m, *args, &block)
     @int.send(m, *args, &block)
   end

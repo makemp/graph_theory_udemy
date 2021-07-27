@@ -20,16 +20,18 @@ class AdjacencyListBuilder
   def call(directed: false)
     parsed_graph_string.each do |tuple|
       # first element is node number, second which element it connects, third is a numeric label
-      index, connected_with, num_label = tuple.map { |e| ExtendedInteger.new(e) }
+      index, connected_with, num_label = tuple.map(&:to_i)
+
       if connected_with
         if num_label
-          index.label = num_label
+          connected_with = ExtendedInteger.new(connected_with)
           connected_with.label = num_label
         end
         adjacency_list[index].push connected_with
         adjacency_list[connected_with].push index unless directed
       end
     end
+
     adjacency_list
   end
 
