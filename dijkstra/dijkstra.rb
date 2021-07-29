@@ -4,7 +4,7 @@ class Dijkstra
     @number_of_nodes = number_of_nodes
   end
 
-  def eager(starting_node_index)
+  def eager(starting_node_index, end_node: nil)
     visited  = Array.new(number_of_nodes)
     distances = Array.new(number_of_nodes) {Float::INFINITY}
     prev = Array.new(number_of_nodes) # tracking down the path
@@ -29,13 +29,16 @@ class Dijkstra
             ipq.insert(node, new_dist)
           end
         end
+        break if end_node && node == end_node
       end
     end
+    distances = end_node ? distances[end_node] : distances
+
     { prev: prev, distances: distances }
   end
 
-  def find_shortest_path(star_node, end_node)
-    prev, dist = eager(star_node).values
+  def find_shortest_path(star_node, end_node, optimisation: false)
+    prev, dist = eager(star_node, end_node: optimisation ? end_node : nil).values
     path = []
     return -1 if dist[end_node] == Float::INFINITY
     at = end_node
