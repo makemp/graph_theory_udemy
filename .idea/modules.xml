@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../adjacency-list-builder/.idea/adjacency-list-builder.iml" filepath="$PROJECT_DIR$/../adjacency-list-builder/.idea/adjacency-list-builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/graph_theory_udemy.iml" filepath="$PROJECT_DIR$/.idea/graph_theory_udemy.iml" />
     </modules>
   </component>

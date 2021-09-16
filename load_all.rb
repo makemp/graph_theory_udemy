@@ -1,3 +1,9 @@
+require 'adjacency_list_builder'
+
+def not_ignored(path)
+  !%w(load_all.rb run.rb README.md Gemfile Gemfile.lock).include?(path)
+end
+
 Dir.glob("**/*")
    .sort_by do |path|
      if path =~ /\Acommons/
@@ -12,6 +18,6 @@ Dir.glob("**/*")
       2
      end
    end
-   .select { |path| File.file?(path) && path != 'load_all.rb' && path != 'run.rb' && path != 'README.md' }.each do |path|
+   .select { |path| File.file?(path) && not_ignored(path) }.each do |path|
   require_relative path
 end
