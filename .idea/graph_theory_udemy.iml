@@ -11,6 +11,28 @@
     </content>
     <orderEntry type="jdk" jdkName="rbenv: 2.7.1" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="maciej_data_structures (v0.0.1) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/lib" />
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/.git" />
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/.idea" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/lib" />
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/.git" />
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/.idea" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/.git" />
+          <root url="file://$MODULE_DIR$/../udemy_easy_to_advanced_data_structures/.idea" />
+        </excluded>
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="PROVIDED" name="adjacency_list_builder (v0.0.1, rbenv: 2.7.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.4, rbenv: 2.7.1) [gem]" level="application" />
   </component>

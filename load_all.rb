@@ -1,4 +1,5 @@
 require 'adjacency_list_builder'
+require_relative '/Users/maciej/Desktop/Projects/udemy_easy_to_advanced_data_structures/lib/maciej_data_structures'
 
 def not_ignored(path)
   !%w(load_all.rb run.rb README.md Gemfile Gemfile.lock).include?(path)
